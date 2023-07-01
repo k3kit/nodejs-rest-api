@@ -1,5 +1,5 @@
 const Product = require("../models/productModels");
-
+const { getPostData } = require("../utils/fs");
 //@route GET /api/products
 async function getProducts(req, res) {
   try {
@@ -27,7 +27,41 @@ async function getProduct(req, res, id) {
   }
 }
 
+//@route POST /api/product
+async function createProduct(req, res, id) {
+  try {
+    const body = await getPostData(req);
+    const { title, price } = JSON.parse(body);
+    const product = {
+      title,
+      price,
+    };
+    const newProduct = await Product.create(product);
+    res.writeHead(201, { "Content-Type": "application/json" });
+    return res.end(JSON.stringify(newProduct));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function updateProduct(req, res, id) {
+  try {
+    const body = await getPostData(req);
+    const { title, price } = JSON.parse(body);
+    const product = {
+      title,
+      price,
+    };
+    const newProduct = await Product.create(product);
+    res.writeHead(201, { "Content-Type": "application/json" });
+    return res.end(JSON.stringify(newProduct));
+  } catch (error) {
+    console.log(error);
+  }
+}
 module.exports = {
   getProducts,
   getProduct,
+  createProduct,
+  updateProduct,
 };

@@ -1,6 +1,22 @@
 [
+  { "id": "1", "name": "product 1" },
+  { "id": "2", "name": "product 2" },
+  { "id": "3", "name": "product 3" },
+  { "id": "4", "name": "product 4" },
   {
-    "id": "1",
-    "name": "asd"
+    "id": "a9acef19-47be-4cfc-9ee2-c531c87ee4f7",
+    "title": "test product",
+    "description": "product",
+    "price": 100
+  },
+  {
+    "id": "4c7e8eeb-0b5b-4327-91d7-ed03948ce00d",
+    "title": "qweqwe",
+    "price": "aaaaaa"
+  },
+  {
+    "id": "c26a3c54-72e2-41b7-8e14-f5f8a94a50da",
+    "title": "qweqwe",
+    "price": "aaaaaa"
   }
 ]
